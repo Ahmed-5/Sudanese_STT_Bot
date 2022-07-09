@@ -16,7 +16,7 @@ bot.on("text", (ctx) => {
 //   ctx.telegram.sendMessage(ctx.message.chat.id, `Hello ${ctx.state.role}`);
 
   // Using context shortcut
-  ctx.reply(`Hello @${ctx.message.from.username}`);
+  ctx.reply(`Hello @${ctx.message.from.username}.`);
 });
 
 bot.launch();
