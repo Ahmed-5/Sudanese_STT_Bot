@@ -1,0 +1,15 @@
+{
+  "name": "sudanesestt",
+  "version": "1.0.0",
+  "description": "Sudanese (Speech-To-Text) Telegram Bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ahmed Alhassan",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "telegraf": "^4.8.5"
+  }
+}
