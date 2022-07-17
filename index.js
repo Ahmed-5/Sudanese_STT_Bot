@@ -1,6 +1,16 @@
 require("dotenv").config();
 const { Telegraf } = require("telegraf");
 const { google } = require("googleapis");
+const express = require('express')
+const expressApp = express()
+
+const port = process.env.PORT || 5000
+expressApp.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+expressApp.listen(port, () => {
+  console.log(`Listening on port ${port}`)
+})
 
 const spreadsheetId = "1TzEeyni-DrH2gjiXZtgpDJR18-oCm2vnQloNtc4cBE8";
 
