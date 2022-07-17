@@ -15,7 +15,6 @@ expressApp.listen(port, () => {
 const spreadsheetId = "1TzEeyni-DrH2gjiXZtgpDJR18-oCm2vnQloNtc4cBE8";
 
 const helpMessage = `
-This is the help message
 /start to start the bot
 /help to show how to use the bot
 `;
