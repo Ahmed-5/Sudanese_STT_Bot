@@ -82,9 +82,11 @@ initGoogle()
       console.log(ctx.message);
     });
 
-    bot.on("voice", (ctx) => {
-      if (message) bot.telegram.sendMessage(CHAT_ID, "Record\n"+message); // suppose to be the labels
-      bot.telegram.sendVoice(CHAT_ID, ctx.message.voice.file_id);
+    bot.on("voice", async (ctx) => {
+      if (message) {
+        await bot.telegram.sendMessage(CHAT_ID, "Record\n" + message); // suppose to be the labels
+        await bot.telegram.sendVoice(CHAT_ID, ctx.message.voice.file_id);
+      }
     });
 
     bot.action("record", async (ctx) => {
