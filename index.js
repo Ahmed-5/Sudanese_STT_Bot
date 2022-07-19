@@ -1,16 +1,18 @@
 require("dotenv").config();
 const { Telegraf } = require("telegraf");
 const { google } = require("googleapis");
-const express = require('express')
-const expressApp = express()
+const express = require("express");
+const expressApp = express();
 
-const port = process.env.PORT || 5000
-expressApp.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+const CHAT_ID = "-752637091";
+
+const port = process.env.PORT || 5000;
+expressApp.get("/", (req, res) => {
+  res.send("Hello World!");
+});
 expressApp.listen(port, () => {
-  console.log(`Listening on port ${port}`)
-})
+  console.log(`Listening on port ${port}`);
+});
 
 const spreadsheetId = "1TzEeyni-DrH2gjiXZtgpDJR18-oCm2vnQloNtc4cBE8";
 
@@ -77,11 +79,12 @@ initGoogle()
 
     bot.on("text", (ctx) => {
       ctx.reply(`Hello @${ctx.message.from.username}.`);
+      console.log(ctx.message);
     });
 
     bot.on("voice", (ctx) => {
-      if (message) bot.telegram.sendMessage("-721517271", message); // suppose to be the labels
-      bot.telegram.sendVoice("-721517271", ctx.message.voice.file_id);
+      if (message) bot.telegram.sendMessage(CHAT_ID, "Record\n"+message); // suppose to be the labels
+      bot.telegram.sendVoice(CHAT_ID, ctx.message.voice.file_id);
     });
 
     bot.action("record", async (ctx) => {
